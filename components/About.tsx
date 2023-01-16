@@ -18,6 +18,7 @@ function About({}: Props) {
       </h3>
 
       <motion.div
+        className='relative mt-20 md:mb-0 flex-shrink-0 w-56 h-56  md:w-64 md:h-96 xl:w-[400px] xl:h-[500px]'
         initial={{
           x: -200,
           opacity: 0,

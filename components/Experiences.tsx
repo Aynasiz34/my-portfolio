@@ -4,7 +4,7 @@ import ExperienceCard from "./ExperienceCard";
 
 type Props = {};
 
-export default function Experiences({}: Props) {
+function Experiences({}: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -15,9 +15,14 @@ export default function Experiences({}: Props) {
       <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
         Experiences
       </h3>
-      <div>
+      <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80'>
+        <ExperienceCard />
+        <ExperienceCard />
+        <ExperienceCard />
         <ExperienceCard />
       </div>
     </motion.div>
   );
 }
+
+export default Experiences;

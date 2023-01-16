@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 type Props = {};
 
-export default function ExperienceCard({}: Props) {
+function ExperienceCard({}: Props) {
   return (
-    <article>
+    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
       <motion.img
         initial={{
           y: -100,
@@ -22,16 +22,27 @@ export default function ExperienceCard({}: Props) {
         src='https://www.cumhuriyet.com.tr/Archive/2018/4/13/957562_resource/Greenpeace.jpeg'
         alt='company'
       />
-
       <div className='px-0 md:px-10'>
         <h4 className='text-4xl font-light'>Promoter & Activist</h4>
         <p className='font-bold text-2xl mt-1'>Greenpeace AKDENİZ</p>
         <div className='flex space-x-2 my-2'>
-          {/* work desc. */}
-          {/* work desc. */}
-          {/* work desc. */}
+          <img
+            className='h-10 w-15 rounded-full'
+            src='https://1000logos.net/wp-content/uploads/2020/09/JavaScript-Logo.png'
+            alt='jslogo'
+          />
+          <img
+            className='h-10 w-15 rounded-full'
+            src='https://1000logos.net/wp-content/uploads/2020/09/JavaScript-Logo.png'
+            alt='jslogo'
+          />
+          <img
+            className='h-10 w-15 rounded-full'
+            src='https://1000logos.net/wp-content/uploads/2020/09/JavaScript-Logo.png'
+            alt='jslogo'
+          />
         </div>
-        <p>started work... ended...</p>
+        <p className='uppercase py-5 text-gray-300'>started work... ended...</p>
 
         <ul className='list-disc space-y-4 ml-5 text-lg'>
           <li>summary points</li>
@@ -44,3 +55,5 @@ export default function ExperienceCard({}: Props) {
     </article>
   );
 }
+
+export default ExperienceCard;

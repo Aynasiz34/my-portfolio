@@ -4,13 +4,16 @@ import Image from "next/image";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Desert from "../images/desert.png";
+import { PageInfo } from "../typings";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-export default function Hero({}: Props) {
+function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, The Name's Gülbettin Yıldırım",
+      `Hi, The Name's ${pageInfo?.name}`,
       "Guy-who-loves-tea.jsx",
       "<ButLovesToCodeMore />",
     ],
@@ -51,3 +54,5 @@ export default function Hero({}: Props) {
     </div>
   );
 }
+
+export default Hero;
