@@ -42,23 +42,23 @@ function Home({ pageInfo, experiences, skills, socials, projects }: Props) {
       </section>
 
       <section id='about' className='snap-center'>
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
 
       <section id='experiences' className='snap-center'>
-        <Experiences />
+        <Experiences experiences={experiences} />
       </section>
 
       <section id='skills' className='snap-start'>
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       <section id='projects' className='snap-start'>
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       <section id='contact' className='snap-start'>
-        <ContactMe />
+        <ContactMe pageInfo={pageInfo} />
       </section>
       <Link href='#hero'>
         <footer className='sticky bottom-5 w-full cursor-pointer'>

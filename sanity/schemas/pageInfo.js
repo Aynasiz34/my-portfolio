@@ -39,7 +39,7 @@ export default defineType({
     defineField({
       name: 'phoneNumber',
       title: 'PhoneNumber',
-      type: 'string',
+      type: 'url',
     }),
     defineField({
       name: 'email',

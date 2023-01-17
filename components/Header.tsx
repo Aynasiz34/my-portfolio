@@ -30,6 +30,7 @@ function Header({ socials }: Props) {
         {/* Social Media Icons */}
         {socials.map((social) => (
           <SocialIcon
+            target='_blank'
             key={social._id}
             url={social.url}
             fgColor='gray'

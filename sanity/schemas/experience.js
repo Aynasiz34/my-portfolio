@@ -48,7 +48,7 @@ export default defineType({
       name: 'points',
       title: 'Points',
       type: 'array',
-      of: [{ type: "reference", to: { type: "string" } }]
+      of: [{ type: "string" }]
     }),
   ],
 })
