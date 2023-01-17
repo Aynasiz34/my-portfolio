@@ -1,4 +1,5 @@
-import { GetServerSideProps, GetStaticProps } from "next";
+import { Fragment } from "react";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Katar from "../images/katar.jpeg";
@@ -30,48 +31,53 @@ type Props = {
 
 function Home({ pageInfo, experiences, skills, socials, projects }: Props) {
   return (
-    <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80'>
+    <Fragment>
       <Head>
-        <title>Gülbettin's Portfolio</title>
+        <title>{pageInfo?.name} - Portfolio</title>
+        <meta
+          name='description'
+          content='Perfect match for companies which searching a Front-end (React.js) Developer'
+        />
       </Head>
+      <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80'>
+        <Header socials={socials} />
 
-      <Header socials={socials} />
+        <section id='hero' className='snap-start'>
+          <Hero pageInfo={pageInfo} />
+        </section>
 
-      <section id='hero' className='snap-start'>
-        <Hero pageInfo={pageInfo} />
-      </section>
+        <section id='about' className='snap-center'>
+          <About pageInfo={pageInfo} />
+        </section>
 
-      <section id='about' className='snap-center'>
-        <About pageInfo={pageInfo} />
-      </section>
+        <section id='experiences' className='snap-center'>
+          <Experiences experiences={experiences} />
+        </section>
 
-      <section id='experiences' className='snap-center'>
-        <Experiences experiences={experiences} />
-      </section>
+        <section id='skills' className='snap-start'>
+          <Skills skills={skills} />
+        </section>
 
-      <section id='skills' className='snap-start'>
-        <Skills skills={skills} />
-      </section>
+        <section id='projects' className='snap-start'>
+          <Projects projects={projects} />
+        </section>
 
-      <section id='projects' className='snap-start'>
-        <Projects projects={projects} />
-      </section>
-
-      <section id='contact' className='snap-start'>
-        <ContactMe pageInfo={pageInfo} />
-      </section>
-      <Link href='#hero'>
-        <footer className='sticky bottom-5 w-full cursor-pointer'>
-          <div className='flex items-center justify-center'>
-            <Image
-              className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
-              src={Katar}
-              alt=''
-            />
-          </div>
-        </footer>
-      </Link>
-    </div>
+        <section id='contact' className='snap-start'>
+          <ContactMe pageInfo={pageInfo} />
+        </section>
+        <Link href='#hero'>
+          <footer className='sticky bottom-5 w-full cursor-pointer'>
+            <div className='flex items-center justify-center'>
+              <Image
+                className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
+                src={Katar}
+                alt=''
+              />
+            </div>
+          </footer>
+        </Link>
+      </div>
+    </Fragment>
   );
 }
 

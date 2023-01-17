@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Project } from "../typings";
 import { urlFor } from "../sanity";
@@ -23,10 +22,10 @@ function Projects({ projects }: Props) {
       <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80'>
         {projects?.map((project, i) => (
           <div
-            key={Math.random()}
+            key={project._id}
             className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'
           >
-            <a target='_blank' href={project?.linkToBuild}>
+            <a target='_blank' rel='noreferrer' href={project?.linkToBuild}>
               <motion.img
                 initial={{
                   y: -300,
@@ -50,8 +49,8 @@ function Projects({ projects }: Props) {
                 {project?.technologies.map((technology) => (
                   <img
                     className='h-10 w-10'
-                    key={technology._id}
-                    src={urlFor(technology.image).url()}
+                    key={technology?._id}
+                    src={urlFor(technology?.image).url()}
                   />
                 ))}
               </div>

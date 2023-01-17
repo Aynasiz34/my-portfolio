@@ -1,7 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Cevik from "../images/cevik.jpg";
-import Image from "next/image";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
 
