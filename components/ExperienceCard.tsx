@@ -3,10 +3,6 @@ import { motion } from "framer-motion";
 import { Experience } from "../typings";
 import { urlFor } from "../sanity";
 
-// https://www.sivilsayfalar.org/wp-content/uploads/2017/09/greenpeace-logo-rs.jpg
-// https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJsDi9rJK6ZQgv5Ro9ui72xQTpe8WXg9KKnm57JRkE5rNVTwbv6_1M7LFhWNRPL6eHA&usqp=CAU
-// https://www.cumhuriyet.com.tr/Archive/2018/4/13/957562_resource/Greenpeace.jpeg
-
 type Props = {
   experience: Experience;
 };
@@ -35,6 +31,7 @@ function ExperienceCard({ experience }: Props) {
               key={technology._id}
               className='h-10 w-10 rounded-full'
               src={urlFor(technology.image).url()}
+              alt='technology-image'
             />
           ))}
         </div>
