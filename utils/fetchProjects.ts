@@ -8,6 +8,6 @@ export const fetchProjects = async () => {
   const data = await res.json();
   const projects: Project[] = data.projects;
 
-  console.log("fetchProjects", data);
+  // console.log("fetchProjects", data);
   return projects;
 };
